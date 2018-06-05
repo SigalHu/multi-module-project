@@ -1,0 +1,42 @@
+# Created by .ignore support plugin
+#.gitignore for java
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.ear
+*.ids
+**/target/
+
+# logs
+/stacktrace.log
+/test/reports
+/logs
+*.log
+*.log.*
+
+## .gitignore for intellij
+*.iml
+*.ipr
+*.iws
+*.ids
+.idea/
+
+## .gitignore for eclipse
+*.pydevproject
+.project
+.metadata
+bin/**
+tmp/**
+tmp/**/*
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.classpath
+.settings/
+.loadpath
+**/.DS_Store
+.DS_Store
