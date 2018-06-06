@@ -4,9 +4,24 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <!--groupId定义了项目属于哪个组，一般和项目所在的组织或公司存在关联-->
     <groupId>com.sigalhu.mmp</groupId>
+    <!--artifactId定义了当前Maven项目在组中唯一的ID-->
     <artifactId>multi-module-project</artifactId>
+    <!--packaging指定打包类型，pom表示该项目为聚合项目，不打包-->
+    <packaging>pom</packaging>
+    <!--version指定了项目当前的版本，SNAPSHOT意为快照，说明该项目还处于开发中，是不稳定版本-->
     <version>1.0-SNAPSHOT</version>
 
-
+    <!--用户可以通过在一个打包方式为pom的Maven项目中声明任意数量的module来实现模块的聚合-->
+    <!--在构建时，Maven按序读取POM，如果该POM没有依赖模块，那么就构建该模块，否则就先构建其依赖模块，
+        如果该依赖还依赖于其他模块，则进一步先构建依赖的依赖-->
+    <modules>
+        <module>mmp-dal</module>
+        <module>mmp-integration</module>
+        <module>mmp-commons</module>
+        <module>mmp-biz</module>
+        <module>mmp-service</module>
+        <module>mmp-api</module>
+    </modules>
 </project>
