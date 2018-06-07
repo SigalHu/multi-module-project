@@ -11,5 +11,10 @@
 
     <artifactId>mmp-api</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.sigalhu.mmp</groupId>
+            <artifactId>mmp-service</artifactId>
+        </dependency>
+    </dependencies>
 </project>

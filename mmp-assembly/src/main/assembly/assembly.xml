@@ -1,0 +1,28 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<assembly>
+    <id>assembly</id>
+    <!--指定是否包含打包层目录，当值为true，文件被放在finalName目录下，否则直接放在包的根目录下-->
+    <includeBaseDirectory>false</includeBaseDirectory>
+
+    <!--指定要包含的文件集，可以定义多个fileSet-->
+    <fileSets>
+        <fileSet>
+            <!--指定要包含的目录-->
+            <directory>${project.build.directory}/classes</directory>
+            <!--指定当前要包含的目录的目的地-->
+            <outputDirectory>conf</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>src/main/assembly/bin</directory>
+            <outputDirectory>bin</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/lib</directory>
+            <outputDirectory>lib</outputDirectory>
+        </fileSet>
+        <fileSet>
+            <directory>${project.build.directory}/core</directory>
+            <outputDirectory>core</outputDirectory>
+        </fileSet>
+    </fileSets>
+</assembly>

@@ -23,5 +23,66 @@
         <module>mmp-biz</module>
         <module>mmp-service</module>
         <module>mmp-api</module>
+        <module>mmp-assembly</module>
     </modules>
+
+    <!--使用properties定义Maven属性-->
+    <properties>
+        <junit.version>4.12</junit.version>
+    </properties>
+
+    <!--dependencies下可包含多个dependency以声明项目的依赖-->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <!--测试-->
+            <dependency>
+                <!--定义当前Maven项目隶属的实际项目，一个实际项目往往会被划分成很多模块-->
+                <groupId>junit</groupId>
+                <!--定义实际项目中的一个Maven项目（模块），推荐使用实际项目名称作为artifactId的前缀-->
+                <artifactId>junit</artifactId>
+                <!--Maven运行时会将POM中所有${junit.version}替换成实际值-->
+                <version>${junit.version}</version>
+                <!--scope为依赖范围，test表示该依赖只对测试有效-->
+                <!--<scope>test</scope>-->
+            </dependency>
+
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-api</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-biz</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-commons</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-dal</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-integration</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.sigalhu.mmp</groupId>
+                <artifactId>mmp-service</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
 </project>

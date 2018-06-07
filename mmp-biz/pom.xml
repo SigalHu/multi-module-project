@@ -11,5 +11,18 @@
 
     <artifactId>mmp-biz</artifactId>
 
-
+    <dependencies>
+        <dependency>
+            <groupId>com.sigalhu.mmp</groupId>
+            <artifactId>mmp-dal</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sigalhu.mmp</groupId>
+            <artifactId>mmp-integration</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.sigalhu.mmp</groupId>
+            <artifactId>mmp-commons</artifactId>
+        </dependency>
+    </dependencies>
 </project>
